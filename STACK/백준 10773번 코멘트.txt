@@ -1,4 +1,0 @@
-Q.10773 comment
-
-when using a method of 'for';
-if I write like 'for(int i = 0;i<std.size();i++){std.pop()}', change the size of stack in every Repetition.
