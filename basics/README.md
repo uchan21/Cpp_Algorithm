@@ -1,1 +1,1 @@
-# This is basic algorithm of programming
+# THIS **FILE** includes questions of ***basic algorithm***
