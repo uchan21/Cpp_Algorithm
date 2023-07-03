@@ -1,5 +1,5 @@
 #pragma once
-#include "node.cpp"
+#include "node.h"
 
 class org_tree
 {
@@ -27,12 +27,12 @@ public:
 		auto managerNode = org_tree::find(root, manager);
 
 		if (!managerNode) {
-			std::cout << manager << "À» Ã£À» ¼ö ¾ø½À´Ï´Ù: " << std::endl;
+			std::cout << manager << "ì„ ì°¾ì„ ìˆ˜ ì—†ìŠµë‹ˆë‹¤: " << std::endl;
 			return false;
 		}
 
 		if (managerNode->first && managerNode->second) {
-			std::cout << manager << " ¾Æ·¡¿¡ " << subordinate << "À» Ãß°¡ÇÒ ¼ö ¾ø½À´Ï´Ù" << std::endl;
+			std::cout << manager << " ì•„ëž˜ì— " << subordinate << "ì„ ì¶”ê°€í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤" << std::endl;
 			return false;
 		}
 
@@ -41,11 +41,11 @@ public:
 		else
 			managerNode->second = new node{ subordinate, NULL,NULL };
 
-		std::cout << manager << " ¾Æ·¡¿¡ " << subordinate << " À» Ãß°¡Çß½À´Ï´Ù." << std::endl;
+		std::cout << manager << " ì•„ëž˜ì— " << subordinate << " ì„ ì¶”ê°€í–ˆìŠµë‹ˆë‹¤." << std::endl;
 
 		return true;
 	}
-	static void preOrder(node* start) {//ÀüÀ§ ¼øÈ¸
+	static void preOrder(node* start) {//ì „ìœ„ ìˆœíšŒ
 		if (!start)
 			return;
 		std::cout << start->position << ", ";
@@ -53,7 +53,7 @@ public:
 		preOrder(start->second);
 	}
 
-	static void inOrder(node* start) { //ÁßÀ§ ¼øÈ¸
+	static void inOrder(node* start) { //ì¤‘ìœ„ ìˆœíšŒ
 		if (!start)
 			return;
 
@@ -62,7 +62,7 @@ public:
 		inOrder(start->second);
 	}
 
-	static void postOrder(node* start) { //ÈÄÀ§ ¼øÈ¸
+	static void postOrder(node* start) { //í›„ìœ„ ìˆœíšŒ
 		if (!start)
 			return;
 
